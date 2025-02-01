@@ -172,8 +172,9 @@ This output confirms that **positional encoding was applied correctly without al
 
 
 ## 🎥 Video Walkthrough  
-🔗 [Watch the Video Walkthrough](#)  
-(A quick 5-minute explanation of the project.)
+## 📌 Video Walkthrough 🎥  
+[![Watch the Video](https://img.youtube.com/vi/xi2u191_vNw/maxresdefault.jpg)](https://youtu.be/xi2u191_vNw)
+
 
 ---
 
