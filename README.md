@@ -1,28 +1,33 @@
-🚀 Learnable Positional Encoding in PyTorch
-ML Internship - Technical Interview Task
-Submitted by: Md Sami Ul Hoque
-Email: samihoque16@gmail.com
+# 🚀 Learnable Positional Encoding in PyTorch
+* ML Internship - Technical Interview Task
+* Submitted by: Md Sami Ul Hoque
+* Email: samihoque16@gmail.com
 
-📌 1. Answer: Issues with Stacking Self-Attention Layers with Positional Encoding
+# 📌 1. Answer: Issues with Stacking Self-Attention Layers with Positional Encoding
 Think of photocopying a document multiple times—each time, the quality gets worse. Similarly, when stacking too many self-attention layers, the model faces:
 
-1. Loss of Positional Information – Like fading text in photocopies, deep layers weaken positional encoding, making it harder to retain sequence order.
-2. Computational Cost – Self-attention requires O(n²) complexity, making it very slow for long sequences.
-3. Vanishing Gradient – Like tracing a faded photocopy, deep layers lose important information, making training unstable.
-4. Redundant Learning – Similar to reprinting the same content multiple times, self-attention layers can focus too much on short-term dependencies, limiting long-range learning.
+* Loss of Positional Information – Like fading text in photocopies, deep layers weaken positional encoding, making it harder to retain sequence order.
+  
+* Computational Cost – Self-attention requires O(n²) complexity, making it very slow for long sequences.
+
+* Vanishing Gradient – Like tracing a faded photocopy, deep layers lose important information, making training unstable.
+  
+* Redundant Learning – Similar to reprinting the same content multiple times, self-attention layers can focus too much on short-term dependencies, limiting long-range learning.
+  
 ✅ Solution? Instead of blindly stacking layers, efficient architectures like hybrid models (CNN + Self-Attention) or smarter attention mechanisms (Longformer, Linformer, Performer) can improve efficiency.
 
-📌 2. Learnable Positional Encoding in PyTorch
+# 📌 2. Learnable Positional Encoding in PyTorch
 Instead of fixed positional encoding (like pre-numbered book pages), we allow the model to learn its own position embeddings dynamically.
 
 💻 Implementation
-
+```python
 import torch
 import torch.nn as nn
 
 # -------------------------------
 # Learnable Positional Encoding Class
 # -------------------------------
+
 class LearnablePositionalEncoding(nn.Module):
     """
     Implements learnable positional encoding for Transformer models.
@@ -124,7 +129,7 @@ if __name__ == "__main__":
     # Print the Output Shape for Verification
     print("Input Shape:", dummy_input.shape)  # Expected: (batch_size, seq_len)
     print("Output Shape:", output.shape)  # Expected: (batch_size, seq_len, d_model)
-
+```
 ## **📌 3. Explanation**
 ### **🔹 Why Use Learnable Positional Encoding?**
 - Traditional **sinusoidal encoding is static**, meaning the model **cannot adapt** to different datasets.
@@ -165,7 +170,6 @@ This output confirms that **positional encoding was applied correctly without al
 
 ---
 
-# Learnable Positional Encoding
 
 ## 🎥 Video Walkthrough  
 🔗 [Watch the Video Walkthrough](#)  
@@ -176,11 +180,20 @@ This output confirms that **positional encoding was applied correctly without al
 ## 📌 How to Run This Project
 
 ### 1️⃣ Clone the Repository  
+
 ```bash
-
-
 git clone https://github.com/RedHood316/learnable-positional-encoding.git
 cd learnable-positional-encoding
+```
 
+### 2️⃣ Install Dependencies**
+```bash
+pip install torch numpy
+```
+### 3️⃣ Run the Script
+```bash
+python main.py
+```
+✅ This will execute the Transformer model with learnable positional encoding.
 
 
